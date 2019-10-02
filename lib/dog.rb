@@ -21,7 +21,6 @@ class Dog
   
   def self.find_by_name(name)
     sql = "SELECT * FROM dogs WHERE name = ?"
-    binding.pry
     r = DB[:conn].execute(sql, name).map do |row|
     self.new_from_db(row)
     end
