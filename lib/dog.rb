@@ -30,4 +30,8 @@ class Dog
     dog = Dog.new(hash)
     dog.save
   end
+  
+  def self.find_by_id(id)
+    
+  end
 end
