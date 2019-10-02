@@ -40,9 +40,10 @@ class Dog
     dog = DB[:conn].execute("SELECT * FROM dogs WHERE name = ? AND breed = ?", name, breed)
     if !dog.empty?
       row = dog[0]
-      Dog.new(id: row[0], name: row[1], breed: row[2])
+      dog = Dog.new(id: row[0], name: row[1], breed: row[2])
     else 
-      self.create(name: name, breed: breed)
+      dog = self.create(name: name, breed: breed)
     end
+    dog
   end
 end
