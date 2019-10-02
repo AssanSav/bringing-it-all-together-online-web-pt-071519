@@ -32,6 +32,6 @@ class Dog
   end
   
   def self.find_by_id(id)
-    
+    sql = ("SELECT * FROM dogs WHERE id = ?", id)
   end
 end
