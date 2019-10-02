@@ -1,11 +1,11 @@
 class Dog 
   attr_accessor :id, :name, :breed
   
-  def initialize(hash={})
-    hash.each do |key, value|
-      self.send("#{key}=", value)
+   def initialize(name:, breed:, id: nil)
+        @name = name 
+        @breed = breed
+        @id = id
     end
-  end
   
   def self.create_table 
     DB[:conn].execute("CREATE TABLE IF NOT EXISTS dogs (id INTEGER PRIMARY KEY, name TEXT, breed TEXT)")
