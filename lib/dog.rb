@@ -29,6 +29,7 @@ class Dog
   def self.create(hash) 
     dog = Dog.new(hash)
     dog.save
+    dog
   end
   
   def self.find_by_id(id)
