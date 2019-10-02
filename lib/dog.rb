@@ -23,6 +23,7 @@ class Dog
     sql = "SELECT * FROM dogs WHERE name = ?"
     r = DB[:conn].execute(sql, name).map do |row|
     self.new_from_db(row)
+    binding.pry
     end
   end
   
